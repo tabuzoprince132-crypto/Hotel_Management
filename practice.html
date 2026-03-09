@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="wframe.css">
+</head>
+<body>
+    <div class="bar">
+        <div class="left">
+            <img src="image/images.jfif" alt="can't load.">
+            <h3>Brand</h3>
+        </div>
+              
+        <a href="log.html" target="_blank"><img src="image/images.jfif" alt="can't load."></a>
+    </div>
+
+    <div class="title">
+        <img src="image/resort.jfif" class="resort" alt="can't load." >
+        <h2>Welcome to</h2>
+        <h1>Hotel</h1>
+
+        <div class="book">
+            <form action="book.php" method="post">
+                <div class="field">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="field">
+                    <label for="guest">Guests</label>
+                    <input type="text" id="guest" name="guest" required>
+                </div>
+
+                <div class="field">
+                    <br>
+                    <input id="submit" type="submit" value="Book">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="slider">
+        
+        <div class="arrows">
+            <img id="slide" class="imgsl" src="image/images.jfif" alt="can't load.">
+
+            <button id="prev" onclick="prev()">&#10094;</button>
+            <button id="next" onclick="next()">&#10095;</button>
+
+            <div id="info">
+            <h2>Panoramic Views</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim vitae nunc quis placerat. Etiam consequat eros a tempus sollicitudin. Donec nec tincidunt risus. </p>
+        
+    </div>
+        </div>
+
+        <div class="dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    
+    <script>
+        let images=["image/images.jfif","image/try.png","image/resort.jfif"];
+        let index=0;
+
+        function next()
+        {
+            index++;
+            if(index >= images.length)
+            {
+                index = 0;
+            }
+            document.getElementById("slide").src = images[index];
+        }
+
+        function prev()
+        {
+            index--;
+            if(index < 0)
+            {
+                index = images.length - 1;
+            }
+            document.getElementById("slide").src = images[index];
+        }
+    </script>
+
+
+</body>
+</html>
+
+
