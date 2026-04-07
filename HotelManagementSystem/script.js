@@ -7,3 +7,4 @@ function addAccount(){
     let message = "Account is successfully registered!";
     alert(message);
 }
+

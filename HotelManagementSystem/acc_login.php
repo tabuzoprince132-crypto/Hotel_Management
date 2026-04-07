@@ -47,6 +47,13 @@ if(isset($_POST['register']))
 
         $user = $result->fetch_assoc();
 
+        $_SESSION['account_ID']    = $user['account_ID'];
+        $_SESSION['firstName']  = $row['firstName'];
+        $_SESSION['lastName']   = $row['lastName'];
+        $_SESSION['email']      = $row['email'];
+        $_SESSION['contact']    = $row['contact'];
+        $_SESSION['role']       = $row['role'];
+
         if ($password === $user['password']) {
 
             $_SESSION['firstName'] = $user['firstName'];
@@ -55,7 +62,7 @@ if(isset($_POST['register']))
                 header("Location: admin_dashboard.php");
                 exit();
             } else {
-                header("Location: guest_dashboard.php");
+                header("Location: guest\guest_dashboard.php");
                 exit();
             }
         }
